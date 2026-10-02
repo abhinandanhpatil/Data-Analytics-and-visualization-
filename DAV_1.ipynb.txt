@@ -1,0 +1,483 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "arr=np.array([100, 200, 300, 400, 500])\n",
+        "print(\"\\n Numpy array\")\n",
+        "print(\"Array: \", arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_9cxwciTj0K7",
+        "outputId": "b38becba-36c7-40da-9e8f-f733736ea6eb"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            " Numpy array\n",
+            "Array:  [100 200 300 400 500]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"First element:\",arr[0])\n",
+        "print(\"Second element:\",arr[1])\n",
+        "print(\"Third element:\",arr[2])\n",
+        "print(\"Fourth element:\",arr[3])\n",
+        "print(\"First element:\",arr[0])\n",
+        "print(\"Fifth element:\",arr[4])\n",
+        "print(\"Last element:\",arr[-1])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WCvqnrJvkNFk",
+        "outputId": "84b07797-8fb3-45cf-df4c-c73b2145923f"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "First element: 100\n",
+            "Second element: 200\n",
+            "Third element: 300\n",
+            "Fourth element: 400\n",
+            "First element: 100\n",
+            "Fifth element: 500\n",
+            "Last element: 500\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Array Slicing\\n\")\n",
+        "print(\"first 4 elements:\",arr[:4])\n",
+        "print(\"elements from index 3:\",arr[3:])\n",
+        "print(\"last 3 elements:\", arr[-3:])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kncQQppSkR9f",
+        "outputId": "cd2e2853-6e8e-47a0-dbbd-5c12778a792e"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array Slicing\n",
+            "\n",
+            "first 4 elements: [100 200 300 400]\n",
+            "elements from index 3: [400 500]\n",
+            "last 3 elements: [300 400 500]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Basic array operations\\n\")\n",
+        "print(\"Add 100:\", arr+100)\n",
+        "print(\"Subtract 50:\", arr-50)\n",
+        "print(\"Multiply 2:\", arr*2)\n",
+        "print(\"Divide 10:\", arr/10)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-SYN8yRCklKi",
+        "outputId": "6d5bd031-f6f1-4483-dfc0-047c9c80568d"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Basic array operations\n",
+            "\n",
+            "Add 100: [200 300 400 500 600]\n",
+            "Subtract 50: [ 50 150 250 350 450]\n",
+            "Multiply 2: [ 200  400  600  800 1000]\n",
+            "Divide 10: [10. 20. 30. 40. 50.]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Mathematical operations\\n\")\n",
+        "print(\"Sum:\",np.sum(arr))\n",
+        "print(\"Mean:\",np.mean(arr))\n",
+        "print(\"Maximum:\",np.max(arr))\n",
+        "print(\"Minimum:\",np.min(arr))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PJiv9Vonky8j",
+        "outputId": "df2d249e-4532-41e4-c4d7-7186679733b4"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mathematical operations\n",
+            "\n",
+            "Sum: 1500\n",
+            "Mean: 300.0\n",
+            "Maximum: 500\n",
+            "Minimum: 100\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "arr=np.array([10,20,30,40,50,60])\n",
+        "new_arr=arr.reshape(6, 1)\n",
+        "print(\"\\nOriginal array:\\n\")\n",
+        "print(arr)\n",
+        "print(\"\\nReshaped array:\\n\")\n",
+        "print(new_arr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "__xfSI2mk3fO",
+        "outputId": "600c20fc-a224-46b4-c076-d40bf3ec5b20"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Original array:\n",
+            "\n",
+            "[10 20 30 40 50 60]\n",
+            "\n",
+            "Reshaped array:\n",
+            "\n",
+            "[[10]\n",
+            " [20]\n",
+            " [30]\n",
+            " [40]\n",
+            " [50]\n",
+            " [60]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data={\n",
+        "    \"Name\":[\"Harry\", \"Ron\", \"Hermoine\", \"Luna\"],\n",
+        "    \"Marks\":[90, 88, 100, 91],\n",
+        "    \"House\":[\"Gryffindor\", \"Gryffindor\", \"Gryffindor\", \"Ravenclaw\"]\n",
+        "}\n",
+        "df=pd.DataFrame(data)\n",
+        "print(\"\\nPandas DataFame\\n\")\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "T-djyB6flZue",
+        "outputId": "9c74966b-a6df-475c-89d9-4ecab59aa5d2"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Pandas DataFame\n",
+            "\n",
+            "       Name  Marks       House\n",
+            "0     Harry     90  Gryffindor\n",
+            "1       Ron     88  Gryffindor\n",
+            "2  Hermoine    100  Gryffindor\n",
+            "3      Luna     91   Ravenclaw\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Name Column:\")\n",
+        "print(df[\"Name\"])\n",
+        "print(\"Marks Column:\")\n",
+        "print(df[\"Marks\"])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UddHU87PnNlb",
+        "outputId": "ea9eed38-b097-4bfa-a961-fb51a8aa9d4e"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name Column:\n",
+            "0       Harry\n",
+            "1         Ron\n",
+            "2    Hermoine\n",
+            "3        Luna\n",
+            "Name: Name, dtype: object\n",
+            "Marks Column:\n",
+            "0     90\n",
+            "1     88\n",
+            "2    100\n",
+            "3     91\n",
+            "Name: Marks, dtype: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Name and Marks Columns:\")\n",
+        "print(df[[\"Name\", \"Marks\"]])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CrvGiwCGncaZ",
+        "outputId": "42acc8aa-fd36-4f68-ab48-7e3903f922e1"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Name and Marks Columns:\n",
+            "       Name  Marks\n",
+            "0     Harry     90\n",
+            "1       Ron     88\n",
+            "2  Hermoine    100\n",
+            "3      Luna     91\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Average Marks:\",df[\"Marks\"].mean())\n",
+        "print(\"Highest Marks:\",df[\"Marks\"].max())\n",
+        "print(\"Lowest Marks:\",df[\"Marks\"].min())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G9mk3N8cniL7",
+        "outputId": "e04053f9-fc3f-4853-bdb8-f6bd22b77db9"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Average Marks: 92.25\n",
+            "Highest Marks: 100\n",
+            "Lowest Marks: 88\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nOriginal DataFrame\\n\")\n",
+        "print(df)\n",
+        "print(\"\\nRow Indexing\\n\")\n",
+        "print(\"\\nFirst Row:\\n\")\n",
+        "print(df.iloc[0])\n",
+        "print(\"\\nSecond Row:\\n\")\n",
+        "print(df.iloc[1])\n",
+        "print(\"\\nThird Row:\\n\")\n",
+        "print(df.iloc[2])\n",
+        "print(\"\\nFourth Row:\\n\")\n",
+        "print(df.iloc[3])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GMJfebdinrgR",
+        "outputId": "0bcc5669-ec02-486b-b0b2-1ebd65efc6d1"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Original DataFrame\n",
+            "\n",
+            "       Name  Marks       House\n",
+            "0     Harry     90  Gryffindor\n",
+            "1       Ron     88  Gryffindor\n",
+            "2  Hermoine    100  Gryffindor\n",
+            "3      Luna     91   Ravenclaw\n",
+            "\n",
+            "Row Indexing\n",
+            "\n",
+            "\n",
+            "First Row:\n",
+            "\n",
+            "Name          Harry\n",
+            "Marks            90\n",
+            "House    Gryffindor\n",
+            "Name: 0, dtype: object\n",
+            "\n",
+            "Second Row:\n",
+            "\n",
+            "Name            Ron\n",
+            "Marks            88\n",
+            "House    Gryffindor\n",
+            "Name: 1, dtype: object\n",
+            "\n",
+            "Third Row:\n",
+            "\n",
+            "Name       Hermoine\n",
+            "Marks           100\n",
+            "House    Gryffindor\n",
+            "Name: 2, dtype: object\n",
+            "\n",
+            "Fourth Row:\n",
+            "\n",
+            "Name          Luna\n",
+            "Marks           91\n",
+            "House    Ravenclaw\n",
+            "Name: 3, dtype: object\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nSpecific Values\\n\")\n",
+        "print(\"Marks of Harry:\", df.iloc[0,1])\n",
+        "print(\"Marks of Ron:\", df.iloc[1,1])\n",
+        "print(\"Branch of Hermoine:\", df.iloc[2,2])\n",
+        "print(\"Last Name:\", df.iloc[3,0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7SetC-0po2WU",
+        "outputId": "68fc9f54-437d-4eff-bf87-8faf12b620f0"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Specific Values\n",
+            "\n",
+            "Marks of Harry: 90\n",
+            "Marks of Ron: 88\n",
+            "Branch of Hermoine: Gryffindor\n",
+            "Last Name: Luna\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nData Filtering\\n\")\n",
+        "result=df[df['Marks']>90]\n",
+        "print(\"Students with marks greater than 90:\\n\")\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "g9WfCdG2n9xY",
+        "outputId": "0b17921a-5274-4b03-9dc1-2582c8157e65"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Data Filtering\n",
+            "\n",
+            "Students with marks greater than 90:\n",
+            "\n",
+            "       Name  Marks       House\n",
+            "2  Hermoine    100  Gryffindor\n",
+            "3      Luna     91   Ravenclaw\n"
+          ]
+        }
+      ]
+    }
+  ]
+}

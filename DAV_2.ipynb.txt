@@ -1,0 +1,168 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "g2DLiM2tqwdX"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "data={\n",
+        "    \"Student_ID\":[101,102,103,104,105,106,102,107],\n",
+        "    \"Student\":[\"Asha\",\"Ravi\",\"Priya\",\"John\",\"Anu\",\"Kiran\",\"Ravi\",\"Meena\"],\n",
+        "    \"Department\":[\"CSE\",\"CSE\",\"ECE\",\"ECE\",\"CSE\",\"EEE\",\"CSE\",\"EEE\"],\n",
+        "    \"Attendance\":[90,75,95,60,80,70,75,85],\n",
+        "    \"Internal_Marks\":[85,70,90,55,78,65,70,None],\n",
+        "    \"Final_Marks\":[88,72,92,50,80,68,72,82]\n",
+        "}\n",
+        "\n",
+        "df=pd.DataFrame(data)\n",
+        "df.to_csv(\"Students.csv\", index=False)\n",
+        "print(\"Students.csv created successfully!\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df=pd.read_csv(\"Students.csv\")\n",
+        "print(\"\\nOriginal Dataset:\\n\")\n",
+        "df"
+      ],
+      "metadata": {
+        "id": "gLEHGJlrrQSu"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nFirst five records:\\n\")\n",
+        "df.head()"
+      ],
+      "metadata": {
+        "id": "MpzULOgLrUj2"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nLast five records:\\n\")\n",
+        "df.tail()"
+      ],
+      "metadata": {
+        "id": "XoQSxyeSr6G1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nDataset Shape:\\n\")\n",
+        "df.shape"
+      ],
+      "metadata": {
+        "id": "ZW6nXKnlr-1I"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nCheck datatype:\\n\")\n",
+        "df.dtypes"
+      ],
+      "metadata": {
+        "id": "KKpLMNCRsC34"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nDiscription Statistics:\\n\")\n",
+        "df.describe()"
+      ],
+      "metadata": {
+        "id": "twETjG_TsGF1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nMissing Values:\\n\")\n",
+        "print(df.isnull().sum())"
+      ],
+      "metadata": {
+        "id": "0CzCGquysJ3S"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nNumber of Duplicate Records:\\n\")\n",
+        "print(df.duplicated().sum())\n",
+        "df=df.drop_duplicates()"
+      ],
+      "metadata": {
+        "id": "W2pwDZnxsSeX"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nAverage Final Marks by Department:\\n\")\n",
+        "df.groupby(\"Department\")[\"Final_Marks\"].mean()"
+      ],
+      "metadata": {
+        "id": "kyCSJWHOshON"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "courses=pd.DataFrame({\n",
+        "    \"Student_ID\":[101,102,103,104,105,106,107],\n",
+        "    \"Course\":[\"Python\",\"Python\",\"Java\",\"Python\",\"Java\",\"Python\",\"Java\"]\n",
+        "})\n",
+        "merged_df=pd.merge(df,courses,on=\"Student_ID\")\n",
+        "print(\"\\nMerged Dataset:\\n\")\n",
+        "merged_df"
+      ],
+      "metadata": {
+        "id": "Aj77pINZtCXh"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
